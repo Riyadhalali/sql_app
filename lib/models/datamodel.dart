@@ -1,7 +1,7 @@
 class DataModel {
   int? id;
-  final String title;
-  final String? subtitle;
+  String title;
+  String? subtitle;
 
   DataModel({this.id, required this.title, this.subtitle});
 

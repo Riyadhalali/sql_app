@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sql_app/db/database.dart';
 import 'package:sql_app/models/datamodel.dart';
 
+//-> ref: https://github.com/DevStack06/Flutter-Tutorials
 void main() {
   runApp(MyApp());
 }
@@ -68,7 +69,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          db.insertData(DataModel(title: "Alali"));
+          //-------------------Insert Data-----------------------------
+          //  db.insertData(DataModel(title: "Alali"));
+          //-------------------Update Data------------------------------
+
+          DataModel newData = datas[0];
+          newData.title = "RiyadAlali"; // update name
+          db.update(newData, 0); // index or id 0
+
+          //----------------------Delete Data---------------------------
+          /* db.delete(0);
+          setState(() {
+            datas.removeAt(0);
+          });*/
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),
