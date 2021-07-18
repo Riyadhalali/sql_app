@@ -41,6 +41,7 @@ class DB {
     final Database db = await initDB();
     await db
         .update("MYTABLE", dataModel.toMap(), where: "id=?", whereArgs: [id]);
+    print(await db.query("MYTABLE")); // print all data in the table
   }
 
   //-------------------------Delete Data----------------------------------------

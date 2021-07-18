@@ -1,16 +1,16 @@
 class DataModel {
   int? id;
   String title;
-  String? subtitle;
+  String subtitle;
 
-  DataModel({this.id, required this.title, this.subtitle});
+  DataModel({this.id, required this.title, required this.subtitle});
 
   factory DataModel.fromMap(Map<String, dynamic> json) => DataModel(
-      id: json['id'], title: json["title"], subtitle: json["subtitle"]);
+      id: json["id"], title: json["title"], subtitle: json["SUBTITLE"]);
 
   Map<String, dynamic> toMap() => {
         "id": id,
         "title": title,
-        "subtitle": subtitle,
+        "SUBTITLE": subtitle,
       };
 }

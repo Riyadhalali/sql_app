@@ -65,17 +65,20 @@ class _MyHomePageState extends State<MyHomePage> {
               child: CircularProgressIndicator(),
             )
           : Center(
-              child: Text(datas[0].title),
+              //  child: Text(datas[0].title),
+              child: Text(datas[1].subtitle),
             ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //-------------------Insert Data-----------------------------
-          //  db.insertData(DataModel(title: "Alali"));
+          //  db.insertData(DataModel(title: "Alali", subtitle: "Hello"));
+
           //-------------------Update Data------------------------------
 
-          DataModel newData = datas[0];
+          DataModel newData = datas[1];
           newData.title = "RiyadAlali"; // update name
-          db.update(newData, 0); // index or id 0
+          newData.subtitle = "join";
+          db.update(newData, 1); // index or id 0
 
           //----------------------Delete Data---------------------------
           /* db.delete(0);
